@@ -1,0 +1,44 @@
+.container{
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    justify-items: center;
+}
+.header{
+    min-height: 150px;
+    background-color: #121256;
+
+}
+.links{
+    display: flex;
+    column-gap: 10px;
+    height: 150px;
+    align-items: center;
+}
+.links a{
+    font-size: 30px;
+    color: lavender;
+    text-decoration: none;
+}
+.links a[class='active']{
+text-decoration: none;
+color:olive;
+}
+.user{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.userDiv h5{
+    color: lavender;
+    font-size: 14px;
+}
+.userDiv{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
