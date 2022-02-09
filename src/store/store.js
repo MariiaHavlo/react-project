@@ -1,5 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
-import popularMovieReducer from "./slices/popularMovie.slice/popularMovie.slice";
+import popularMovieReducer from "./slices/popularMovie.slice";
 
 
 export const setUpStore = ()=>configureStore({
