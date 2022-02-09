@@ -1,11 +1,15 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import popularMovieReducer ,{getAllPopularMovies} from "../../store/slices/popularMovie.slice";
+
+import popularMovieReducer  from "../../store/slices/popularMovie.slice";
+import {getAllPopularMovies} from "../../store";
+
+
 
 import Movie from "../../components/movie/Movie";
 
 const PopularMoviePage = () => {
-     const{movies}= useSelector(state=>state[popularMovieReducer])
+     const {movies}= useSelector(state=>state[popularMovieReducer])
     console.log(movies)
 
     const dispatch = useDispatch();

@@ -1,4 +1,5 @@
 import React from 'react';
+import {getAllPopularMovies} from "../../store";
 
 const Movie = ({movie}) => {
     const {id, genres, original_title, poster_path} = movie;
