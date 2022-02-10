@@ -9,12 +9,14 @@ const initialState = {
 }
 
 export const getAllPopularMovies = createAsyncThunk(
-    'popularMovieSlice/getPopularMovies',
-    async (_, {dispatch}) => {
-
-            const data = await movieService.getPopular()
-            dispatch(getPopularMovies({movies: data}))
-
+    'popularMovie/getPopularMovies',
+    async () => {
+try{
+    const movies = await movieService.getPopular()
+    return movies
+}catch (e){
+    return(e)
+}
     }
 )
 
@@ -22,10 +24,23 @@ const popularMovieSlice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
-        getPopularMovies: (state, action) => {
-            state.movies = action.payload.movies
-        }
+        // getPopularMovies: (state, action) => {
+        //     state.movies = action.payload.movies
+        // }
     },
+    extraReducers:{
+        [getAllPopularMovies.pending]:(state,action)=>{
+            state.status = 'pending'
+            state.error=null
+        },
+        [getAllPopularMovies.fulfilled]:(state,action)=>{
+            state.status='fulfilled'
+            state.status = action.payload
+        },
+        [getAllPopularMovies.rejected]:(state,action)=>{
+
+        }
+    }
 
 })
 const popularMovieReducer = popularMovieSlice.reducer;
