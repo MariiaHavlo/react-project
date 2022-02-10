@@ -5,7 +5,10 @@ import {movieService} from "../../services";
 
 
 const initialState = {
-    movies: []
+    movies: [],
+    status:null,
+    error:null
+
 }
 
 export const getAllPopularMovies = createAsyncThunk(

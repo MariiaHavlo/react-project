@@ -9,8 +9,9 @@ import {getAllPopularMovies} from "../../store";
 import Movie from "../../components/movie/Movie";
 
 const PopularMoviePage = () => {
-     const {movies}= useSelector(state=>state[popularMovieReducer])
+     const {movies,status,error}= useSelector(state=>state[popularMovieReducer])
     console.log(movies)
+    const{results} = movies
 
     const dispatch = useDispatch();
      useEffect(()=>{
@@ -19,7 +20,7 @@ const PopularMoviePage = () => {
 
     return (
         <div>
-            {movies.map(movie =><Movie key={movie.id} movie={movie} />)}
+            {results && results.map(movie =><Movie key={movie.id} movie={movie} />)}
         </div>
     );
 };
