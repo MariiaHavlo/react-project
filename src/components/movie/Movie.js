@@ -1,5 +1,4 @@
 import React from 'react';
-import {getAllPopularMovies} from "../../store";
 import {Link} from "react-router-dom";
 
 const Movie = ({movie}) => {

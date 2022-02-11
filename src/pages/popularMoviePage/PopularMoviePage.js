@@ -9,18 +9,18 @@ import {getAllPopularMovies} from "../../store";
 import Movie from "../../components/movie/Movie";
 
 const PopularMoviePage = () => {
-     const {movies,status,error}= useSelector(state=>state[popularMovieReducer])
-    console.log(movies)
-    const{results} = movies
-
     const dispatch = useDispatch();
+     const {movies}= useSelector(state=>state['popularMovieReducer'])
+    console.log(movies)
+
      useEffect(()=>{
          dispatch(getAllPopularMovies())
-     },[])
+     },[dispatch])
+    // const{results} = movies;
 
     return (
         <div>
-            {results && results.map(movie =><Movie key={movie.id} movie={movie} />)}
+            {movies && movies.map(movie =><Movie key={movie.id} movie={movie} />)}
         </div>
     );
 };
