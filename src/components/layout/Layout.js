@@ -14,10 +14,7 @@ const Layout = () => {
                         <NavLink to={'/now_playing'}>Now Playing</NavLink>
                     </div>
 
-                    <div className={css.userDiv}>
-                        <span className={css.user}></span>
-                        <h5>User</h5>
-                    </div>
+                    
                 </div>
 
             </div>

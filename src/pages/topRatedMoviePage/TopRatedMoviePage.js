@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import topMovieReducer, {getAllTopMovies} from "../../store/slices/topRated.slice";
 import Movie from "../../components/movie/Movie";
+import css from './TopRatedMoviePage.module.css';
 
 const TopRatedMoviePage = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const TopRatedMoviePage = () => {
         },[dispatch]
     )
     return (
-        <div>
+        <div className={css.moviesDiv}>
             {movies && movies.map(movie=><Movie key={movie.id} movie={movie}/> )}
         </div>
     );

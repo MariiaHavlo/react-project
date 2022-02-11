@@ -3,10 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 
 import popularMovieReducer  from "../../store/slices/popularMovie.slice";
 import {getAllPopularMovies} from "../../store";
+import css from './PopularMovieRage.module.css';
 
 
 
 import Movie from "../../components/movie/Movie";
+import {Outlet} from "react-router-dom";
 
 const PopularMoviePage = () => {
     const dispatch = useDispatch();
@@ -19,7 +21,8 @@ const PopularMoviePage = () => {
     // const{results} = movies;
 
     return (
-        <div>
+        <div className={css.moviesDiv}>
+            <Outlet/>
             {movies && movies.map(movie =><Movie key={movie.id} movie={movie} />)}
         </div>
     );
