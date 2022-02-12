@@ -8,6 +8,7 @@ import NowPlayingMoviePage from "./pages/nowPayingMoviePage/NowPlayingMoviePage"
 import Layout from "./components/layout/Layout";
 import css from './App.module.css';
 import MovieDetailsPage from "./pages/movieDetailsPage/MovieDetailsPage";
+import GenresPage from "./pages/genresPage/GenresPage";
 
 const App = () => {
     return (
@@ -15,11 +16,14 @@ const App = () => {
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
                     <Route path={'/'} element={<PopularMoviePage/>}>
-                        <Route path={'/id'} element={<MovieDetailsPage/>}/>
                     </Route>
+                        <Route path={'/:id'} element={<MovieDetailsPage/>}/>
                     <Route path={'/upcoming'} element={<UpcomingMoviePage/>}/>
-                    <Route path={'/top_rated'} element={<TopRatedMoviePage/>}/>
+                    <Route path={'/top_rated'} element={<TopRatedMoviePage/>}>
+                    </Route>
+                    <Route path={'/top_rated/:id'} element={<MovieDetailsPage/>}/>
                     <Route path={'/now_playing'} element={<NowPlayingMoviePage/>}/>
+                    <Route path={'/genres'} element={<GenresPage/>}/>
                 </Route>
 
 

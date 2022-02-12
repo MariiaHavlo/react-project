@@ -12,9 +12,9 @@ const Layout = () => {
                         <NavLink to={'/upcoming'}>Upcoming</NavLink>
                         <NavLink to={'/top_rated'}>Top Rated</NavLink>
                         <NavLink to={'/now_playing'}>Now Playing</NavLink>
+                        <NavLink to={'/genres'}>Genres</NavLink>
                     </div>
 
-                    
                 </div>
 
             </div>

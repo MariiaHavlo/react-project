@@ -9,6 +9,10 @@ export const urls = {
     upcoming:'/upcoming',
     topRated:`/movie/top_rated?api_key=${API_KEY}`,
 
+    movies:`/discover/movie?api_key=${API_KEY}`,
+
+    genres:`/genre/movie/list?api_key=${API_KEY}`
+
     // get genres https://api.themoviedb.org/3/genre/movie/list?api_key=0386b8db91517882b6ebf2eb69c2152e
 
 
