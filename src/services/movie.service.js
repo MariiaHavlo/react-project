@@ -14,5 +14,5 @@ export const movieService = {
     getByIdPopular:(id)=>axiosService.get(`${urls.movies}/${id}`).then(value => value.data),
 
     getGenres:()=>axiosService.get(urls.genres).then(value => value.data),
-    getGenresFilterById:(genre_id)=>axiosService.get(`${urls.genresFilterById}/${genre_id}`).then(value => value.data)
+    getGenresFilterById:(id)=>axiosService.get(`${urls.genresFilterById}/${id}`).then(value => value.data)
 }
