@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import topMovieReducer, {getAllTopMovies} from "../../store/slices/topRated.slice";
 import Movie from "../../components/movie/Movie";
 import css from './TopRatedMoviePage.module.css';
+import {Outlet} from "react-router-dom";
 
 const TopRatedMoviePage = () => {
     const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const TopRatedMoviePage = () => {
     )
     return (
         <div className={css.moviesDiv}>
+
             {movies && movies.map(movie=><Movie key={movie.id} movie={movie}/> )}
         </div>
     );

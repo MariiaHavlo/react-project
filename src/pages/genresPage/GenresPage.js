@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getAllGenres} from "../../store/slices/genresSlice";
+import {getAllGenres} from "../../store/slices/genres.slice";
 import Genre from "../../components/genre/Genre";
 
 const GenresPage = () => {

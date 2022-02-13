@@ -1,11 +1,14 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 const Genre = ({genre:{id,name}}) => {
     return (
         <div>
-            hello
-            {id}
-            {name}
+            <NavLink to={id.toString()}>
+                <div>{name}</div>
+            </NavLink>
+
+
         </div>
     );
 };

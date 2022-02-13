@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import css from './Movie.module.css'
+import Genre from "../genre/Genre";
 
 const Movie = ({movie}) => {
     const {id, genre_ids, title, poster_path,vote_average,overview} = movie;
