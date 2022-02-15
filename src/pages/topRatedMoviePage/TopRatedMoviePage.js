@@ -4,21 +4,24 @@ import topMovieReducer, {getAllTopMovies} from "../../store/slices/topRated.slic
 import Movie from "../../components/movie/Movie";
 import css from './TopRatedMoviePage.module.css';
 import {Outlet} from "react-router-dom";
+import {getAllGenres} from "../../store/slices/genres.slice";
 
 const TopRatedMoviePage = () => {
     const dispatch = useDispatch();
 
     const {movies} = useSelector(state=>state['topMovieReducer'])
+    const {genres} = useSelector(state=>state['genresReducer'])
     console.log(movies)
 
     useEffect(()=>{
-        dispatch(getAllTopMovies())
+        dispatch(getAllTopMovies());
+        dispatch(getAllGenres());
         },[dispatch]
     )
     return (
         <div className={css.moviesDiv}>
 
-            {movies && movies.map(movie=><Movie key={movie.id} movie={movie}/> )}
+            {movies && genres && movies.map(movie=><Movie key={movie.id} movie={movie} genres={genres}/> )}
         </div>
     );
 };

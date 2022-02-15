@@ -1,7 +1,39 @@
 .movieDiv{
     width: 200px;
+    cursor: pointer;
 
 }
-.movieDiv img{
-    width: 200px;
+.cardTop{
+    height: 300px;
+
+}
+.cardTop img{
+     width: 100%;
+     height: 100%;
+ }
+/*.movieDiv img{*/
+/*    width: 200px;*/
+/*}*/
+.cardInfo{
+    color: #121256;
+
+}
+.cardInfo h4{
+    /*font-size: 22px;*/
+    /*font-weight: 400;*/
+
+    /*margin-bottom: 40px;*/
+}
+.cardBottom{
+    padding: 20px;
+    /*background-color: gray;*/
+}
+.links a{
+    font-size: 30px;
+    color: lavender;
+    text-decoration: none;
+}
+.links a[class='active']{
+    text-decoration: none;
+    color:olive;
 }

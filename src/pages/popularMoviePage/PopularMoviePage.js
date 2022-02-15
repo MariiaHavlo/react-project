@@ -9,21 +9,24 @@ import css from './PopularMovieRage.module.css';
 
 import Movie from "../../components/movie/Movie";
 import {Outlet} from "react-router-dom";
+import {getAllGenres} from "../../store/slices/genres.slice";
 
 const PopularMoviePage = () => {
     const dispatch = useDispatch();
-     const {movies}= useSelector(state=>state['popularMovieReducer'])
-    console.log(movies)
+     const {movies} = useSelector(state=>state['popularMovieReducer'])
+     const {genres} = useSelector(state=>state['genresReducer'])
+    console.log(movies,genres)
 
-     useEffect(()=>{
-         dispatch(getAllPopularMovies())
-     },[dispatch])
+     useEffect(() => {
+         dispatch(getAllPopularMovies());
+         dispatch(getAllGenres());
+     },[dispatch]);
     // const{results} = movies;
-
     return (
         <div className={css.moviesDiv}>
             <Outlet/>
-            {movies && movies.map(movie =><Movie key={movie.id} movie={movie} />)}
+            {movies && genres && movies.map(movie =><Movie key={movie.id} movie={movie} genres={genres}/>)}
+
         </div>
     );
 };

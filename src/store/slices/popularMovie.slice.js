@@ -17,7 +17,7 @@ export const getAllPopularMovies = createAsyncThunk(
 try{
         console.log('hello')
 
-    const {results} = await movieService.getPopular()
+    const {results} = await movieService.getPopular(2)
     console.log('results',results)
     dispatch(getPopularMovies({movies: results}))
 

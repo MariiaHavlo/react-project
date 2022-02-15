@@ -7,7 +7,7 @@ import {urls} from "../constans";
 
 export const movieService = {
 
-    getPopular:()=>axiosService.get(urls.popularMovies).then(value => value.data),
+    getPopular:(page)=>axiosService.get(urls.popularMovies,{params:{page}}).then(value => value.data),
     // getUpcoming:()=>axiosService.get(urls.upcoming),
     getRating:()=>axiosService.get(urls.topRated).then(value => value.data),
     // getNowPlaying:()=>axiosService.get(urls.nowPlaying),

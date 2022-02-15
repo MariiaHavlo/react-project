@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const Genre = ({genre:{id,name}}) => {
+const Genre = ({genre:{id,name},movies}) => {
 
     return (
         <div>
