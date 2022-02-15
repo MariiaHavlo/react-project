@@ -19,21 +19,30 @@
 
 }
 .cardInfo h4{
-    /*font-size: 22px;*/
-    /*font-weight: 400;*/
-
-    /*margin-bottom: 40px;*/
+    color: #c7c4c4;
+}
+.cardInfo p{
+    color: white;
 }
 .cardBottom{
     padding: 20px;
-    /*background-color: gray;*/
+    background-color: #071f3b;
 }
-.links a{
+.link p{
     font-size: 30px;
     color: lavender;
     text-decoration: none;
 }
-.links a[class='active']{
+.link a[class='active']{
     text-decoration: none;
     color:olive;
+}
+.cardInfoGenres {
+    display: flex;
+}
+.cardInfoGenres p{
+
+    color: white;
+
+
 }

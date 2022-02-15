@@ -9,9 +9,9 @@ const Layout = () => {
                 <div className={css.container}>
                     <div className={css.links}>
                         <NavLink to={'/'}>Popular Movies</NavLink>
-                        <NavLink to={'/upcoming'}>Upcoming</NavLink>
+                        {/*<NavLink to={'/upcoming'}>Upcoming</NavLink>*/}
                         <NavLink to={'/top_rated'}>Top Rated</NavLink>
-                        <NavLink to={'/now_playing'}>Now Playing</NavLink>
+                        {/*<NavLink to={'/now_playing'}>Now Playing</NavLink>*/}
 
                             <NavLink to={'/genres'}>Genres</NavLink>
 

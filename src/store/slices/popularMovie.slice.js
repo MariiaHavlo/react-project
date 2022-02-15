@@ -7,25 +7,36 @@ import {movieService} from "../../services";
 const initialState = {
     movies: [],
     status:null,
-    error:null
+    error:null,
+    limit:0,
+    page:2,
+    currentPage:1
 
 }
 
 export const getAllPopularMovies = createAsyncThunk(
     'popularMovie/getPopularMovies',
-    async (_,{dispatch}) => {
+    async (_,{page,dispatch}) => {
 try{
         console.log('hello')
 
-    const {results} = await movieService.getPopular(2)
+    const {results} = await movieService.getPopular(initialState.page)
+    console.log(page)
     console.log('results',results)
     dispatch(getPopularMovies({movies: results}))
+
+
 
 }catch (e){
     return(e)
 }
     }
 )
+
+
+// export const setPageNumber =(_,expectedPageNumber)=>{
+//     localStorage.setItem("page", expectedPageNumber);
+// }
 
 const popularMovieSlice = createSlice({
     name: 'movieSlice',

@@ -15,7 +15,7 @@ const Movie = ({movie,genres}) => {
     },{})
 console.log(genres, genresMap)
     return (
-        <div>
+        <div >
             <Link to={id.toString()} state={movie}>
                 <div className={css.movieDiv}>
                     <div className={css.cardTop}>
@@ -23,7 +23,10 @@ console.log(genres, genresMap)
                     </div>
                     <div className={css.cardBottom}>
                         <div className={css.cardInfo}>
-                            <p>genres:{genre_ids.map(id =>genresMap[id])}</p>
+                            <div className={css.cardInfoGenres}>
+                                <p>{genre_ids.map(id =>genresMap[id])}</p>
+                            </div>
+
                             <h4>{title}</h4>
                             <p>{vote_average}</p>
                         </div>

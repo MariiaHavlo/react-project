@@ -1,12 +1,14 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
+import css from './Genre.module.css'
+
 const Genre = ({genre:{id,name},movies}) => {
 
     return (
-        <div>
+        <div className={css.genres}>
             <NavLink to={id.toString()} state={id}>
-                <div>{name}</div>
+                <h4>{name}</h4>
             </NavLink>
 
 

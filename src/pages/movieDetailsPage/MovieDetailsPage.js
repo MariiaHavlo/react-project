@@ -17,17 +17,19 @@ const MovieDetailsPage = () => {
         }
         movieService.getByIdPopular(id).then(value=>setMovie({...value}))
     },[id])
+
+
+
     return (
         <div>
             {movie && (
                 <div className={css.movieDetailsContainer}>
 
                     <img src={imgMovie + movie.poster_path}/>
-                    <div>
-                        <div>Id:{movie.id}</div>
-                        <div>Genres:{movie.genre_ids}</div>
-                        <div>Title:{movie.title}</div>
-                        <div>Overview:{movie.overview}</div>
+                    <div className={css.movieInfo}>
+
+                        <h1>Title:{movie.title}</h1>
+                        <p>Overview:{movie.overview}</p>
                     </div>
 
                 </div>
